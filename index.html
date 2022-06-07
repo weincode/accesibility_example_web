@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://library-sdb.apps.bancolombia.com/bds/2.1.2/bds.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="space_4">
+        <h1>Bienvenido al workshop de accesibilidad</h1>
+    </header>
+    <main>
+        <section id="ejemplo-accesibilidad" class="space_4_padding bc_container">
+            <h2>Ejemplo Accesibilidad</h2>
+            <ul id="group-of-image" class="bc-row space_4">
+                <li class="bc-col-3" tabindex="1">
+                    <button class="project1 project">
+                        <img src="images2/imagen1.png" class="project-img" alt="imagen gato lior" />
+                    </button>
+                </li>
+                <li class="bc-col-3" tabindex="-1">
+                    <button class="project1 project ">
+                        <img src="images2/imagen2.png" class="project-img" alt="imagen dos gatos" />
+                    </button>
+                </li>
+                <li class="bc-col-3" tabindex="2">
+                    <button class="project1 project ">
+                        <img src="images2/imagen3.png" class="project-img" alt="Imagen gato sushi" />
+                    </button>
+                </li>
+            </ul>
+            <div class="bc-row">
+                <button class="bc-button-primary bc-col-3" tabindex="4">Elemento A</button>
+                <button class="bc-button-primary bc-col-3 bc-offset-4" tabindex="3">Elemento B</button>
+            </div>
+            <button class="bc-button-secondary bc-col-3 bc-offset-6 space_4_top return-btn" tabindex="5">Reiniciar</button>
+        </section>
+        <div class="modal-container bc-container">
+            <div class="modal">
+                <h2 class="header" id="modal-header" tabindex="0">historia de los gatos</h2>
+                <img src="images2/imagen2.png" class="modal-project-image" alt="sushi y lior juntos" />
+                <button class="bc-button-primary">Cerrar</button>
+            </div>
+        </div>
+    </main>
+    <footer class="space_4">
+        <h2>Gracias por seguir el tutorial 🥳</h2>
+    </footer>
+</body>
+
+</html>
