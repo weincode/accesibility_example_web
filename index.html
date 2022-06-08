@@ -17,18 +17,18 @@
         <section id="ejemplo-accesibilidad" class="space_4_padding bc_container">
             <h2 id="ejemplo-accesibilidad-title" tabindex="1">Ejemplo Accesibilidad</h2>
             <ul id="group-of-image" class="bc-row space_4">
-                <li class="bc-col-3 pepe" >
-                    <button class="open-modal-button" id="pe" tabindex="2">
+                <li class="bc-col-3 pepe">
+                    <button class="open-modal-button-lior" id="pe" tabindex="2">
                         <img src="images/imagen1.png" class="project-img" alt="imagen gato lior" />
                     </button>
                 </li>
                 <li class="bc-col-3">
-                    <button  tabindex="-1">
+                    <button tabindex="-1">
                         <img src="images/imagen2.png" class="project-img" alt="imagen dos gatos" />
                     </button>
                 </li>
                 <li class="bc-col-3 pepe">
-                    <button class="open-modal-button" tabindex="3">
+                    <button class="open-modal-button-sushi" tabindex="3">
                         <img src="images/imagen3.png" class="project-img" alt="Imagen gato sushi" />
                     </button>
                 </li>
@@ -37,15 +37,17 @@
                 <button class="bc-button-primary bc-col-3" tabindex="5">Elemento A</button>
                 <button class="bc-button-primary bc-col-3 bc-offset-4" tabindex="4">Elemento B</button>
             </div>
-            <button class="bc-button-secondary bc-col-3 bc-offset-6 space_4_top return-btn" tabindex="6">Reiniciar</button>
+            <button class="bc-button-secondary bc-col-3 bc-offset-6 space_4_top return-btn"
+                tabindex="6">Reiniciar</button>
         </section>
-        <div class="modal-container bc-container space_4">
-            <div class="modal bc-row">
-                <h2 class="header bc-col-12" id="modal-header" tabindex="0">historia de los gatos</h2>
-                <figure class="bc-col-4 bc-offset-4">
+        <div class="mask" role="dialog"></div>
+        <div class="modal" role="alert">
+            <div class="bc-row space_4">
+                <h2 class="header bc-col-8" id="modal-header" tabindex="0" autofocus >historia de los gatos</h2>
+                <figure class="bc-col-6 bc-offset-4">
                     <img src="images/imagen2.png" class="modal-project-image" alt="sushi y lior juntos" />
                 </figure>
-                <button class="bc-button-primary bc-col-4  bc-offset-4">Cerrar</button>
+                <button class="bc-button-primary bc-col-4  bc-offset-4" id="close-modal-btn">Cerrar</button>
             </div>
         </div>
     </main>
