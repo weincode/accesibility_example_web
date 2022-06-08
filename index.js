@@ -1,37 +1,41 @@
-window.onload = () => {
-    document.querySelectorAll(".open-modal-button").forEach(element => {
-        element.addEventListener("click", e => openModal(e));
-    });
-    document.querySelectorAll(".return-btn").forEach(element => {
-        element.addEventListener("click", e => retunToInitialHeader(e));
-    });
-    document.body.addEventListener("click", e => closeModal(e));
-    document.body.addEventListener("keyup", e => listenForEsc(e));
-};
-/**Escucha por la clave esc para cerrar el modal */
+const modal = document.querySelector('.mask');
+const modalHeader = document.getElementById('modal-header');
+const modalBtnLior = document.querySelector('.open-modal-button-lior');
+const modalBtnSushi = document.querySelector('.open-modal-button-sushi');
+const returnBtn = document.querySelector('.return-btn');
+const principalTitle = document.querySelector('#ejemplo-accesibilidad-title');
+const closeModalBtn = document.querySelector('#close-modal-btn');
+
+// Events
+modalBtnLior.addEventListener('click', openModal);
+modalBtnSushi.addEventListener('click', openModal);
+closeModalBtn.addEventListener('click', closeModal);
+returnBtn.addEventListener('click',e => retunToInitialHeader(e));
+window.addEventListener('click', outsideClick);
+document.body.addEventListener("keyup", e => listenForEsc(e));
+
 function listenForEsc(e) {
     if (e.keyCode === 27) {
         closeModal(e);
+        retunToInitialHeader(e);
     }
 }
-/** Esta funcion se llama cuando la persona hace click en cualquier porjecto del carousel */
+// Close If Outside Click
+function outsideClick(e) {
+    if (e.target == modal) {
+        modal.classList.remove("active");
+    }
+}
+/** Esta funcion se llama cuando la persona hace click en cualquier imagen*/
 function openModal(e) {
-    document.querySelector(".modal-container").style.display = "flex";
-    document.getElementById('modal-header').focus();
+    modal.classList.add("active");
+    modalHeader.focus();
 }
 /** Esta funcion se llama para cerrar el modal */
 function closeModal(e) {
-    if (
-        e.target.className.includes("open-modal-button") ||
-        e.target.className === "modal"
-    ) {
-        return;
-    } else {
-        document.querySelector(".modal-container").style.display = "none";
-
-    }
+    modal.classList.remove("active");
+    retunToInitialHeader(e);
 }
-function retunToInitialHeader(e){
-    document.getElementById('ejemplo-accesibilidad-title').focus();
+function retunToInitialHeader(e) {
+    principalTitle.focus();
 }
-
