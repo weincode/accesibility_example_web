@@ -14,11 +14,19 @@ img{
 }
 
 .return-btn {
-  height: 0;
-  text-align-last: s;
+  opacity: 0;
 }
 
 .return-btn:focus,
 .return-btn:active {
-  height: auto;
+  opacity: 1;
+}
+
+.modal-container{
+  display: none;
+}
+.send-button:focus,
+.modal-button:focus {
+  border: 5px solid var(--gris-oscuro);
+  outline: 3px solid var(--verde);
 }
